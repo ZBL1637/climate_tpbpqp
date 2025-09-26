@@ -1,0 +1,43 @@
+/*
+ * 功能：隐藏并兜底移除右下角的 “Made with Manus” 水印，不影响页面其他内容。
+ * 策略：
+ * 1) 首选精准选择：隐藏指向 manus.im 的固定定位（fixed）角标链接；
+ * 2) 保守兜底：若某些情况下样式未标记 fixed，则限制为右下角区域的 manus.im 链接；
+ * 3) 所有规则均加上 !important，确保覆盖第三方注入的行内样式。
+ */
+
+/* 规则1：指向 manus.im 且 position: fixed 的链接（最常见的水印形式）*/
+a[href*="manus.im"][style*="position: fixed"],
+a[href*="manus.im"][style*="position:fixed"] {
+  display: none !important;
+}
+
+/* 规则2：指向 manus.im 的链接，且位于右下角典型间距范围（兜底）*/
+a[href*="manus.im"][style*="right"][style*="bottom"],
+a[href*="manus.im"][style*="bottom"][style*="right"] {
+  display: none !important;
+}
+
+/* 规则3：若外层容器为 fixed，则隐藏其内容（进一步兜底）*/
+[style*="position: fixed"] a[href*="manus.im"] {
+  display: none !important;
+}
+
+/* 规则4：隐藏含有 made-with-* 前缀类名的按钮/链接（桌面与移动均适用）*/
+[class^="made-with-"],
+[class*=" made-with-"] {
+  display: none !important;
+}
+
+/* 规则6：更稳妥地隐藏指向 manus 域且类名包含 made-with 的链接 */
+a[href*="manus.im"][class*="made-with"],
+a[href*="manus.space"][class*="made-with"] {
+  display: none !important;
+}
+
+/* 规则7：隐藏 footer-watermark-root 容器（用户指定的水印根节点）*/
+.footer-watermark-root {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
