@@ -1,0 +1,303 @@
+/**
+ * 气候变化主题配色方案
+ * Climate Change Theme Color Scheme
+ * 
+ * 主色调：深蓝色（象征海洋）和白色（象征冰川）
+ * 辅助色：橙色（象征高温预警）和绿色（象征环保）
+ * 强调色：红色（象征气候危机警示）
+ */
+
+:root {
+  /* 气候主题色彩变量 */
+  --climate-ocean-blue: #1e3a8a;        /* 深海蓝 */
+  --climate-deep-blue: #1e40af;         /* 深蓝色 */
+  --climate-sky-blue: #3b82f6;          /* 天空蓝 */
+  --climate-light-blue: #60a5fa;        /* 浅蓝色 */
+  --climate-ice-white: #ffffff;         /* 冰川白 */
+  --climate-snow-white: #f8fafc;        /* 雪白色 */
+  --climate-warning-orange: #ea580c;    /* 高温预警橙 */
+  --climate-warm-orange: #f97316;       /* 温暖橙色 */
+  --climate-eco-green: #16a34a;         /* 环保绿 */
+  --climate-forest-green: #15803d;      /* 森林绿 */
+  --climate-crisis-red: #dc2626;        /* 危机红 */
+  --climate-alert-red: #ef4444;         /* 警示红 */
+  
+  /* 渐变色组合 */
+  --climate-ocean-gradient: linear-gradient(135deg, var(--climate-ocean-blue) 0%, var(--climate-deep-blue) 50%, var(--climate-sky-blue) 100%);
+  --climate-warming-gradient: linear-gradient(135deg, var(--climate-warning-orange) 0%, var(--climate-crisis-red) 100%);
+  --climate-cooling-gradient: linear-gradient(135deg, var(--climate-light-blue) 0%, var(--climate-ice-white) 100%);
+  --climate-nature-gradient: linear-gradient(135deg, var(--climate-eco-green) 0%, var(--climate-forest-green) 100%);
+}
+
+/* 更新导航栏配色 */
+.climate-header {
+  background: var(--climate-ocean-gradient) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3) !important;
+}
+
+.header-title {
+  color: var(--climate-ice-white) !important;
+}
+
+.header-title h1 {
+  color: var(--climate-ice-white) !important;
+  text-shadow: 0 2px 4px rgba(30, 58, 138, 0.5) !important;
+}
+
+.header-title p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.nav-item {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid transparent !important;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: var(--climate-ice-white) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.nav-item.active {
+  background: var(--climate-warning-orange) !important;
+  color: var(--climate-ice-white) !important;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4) !important;
+}
+
+/* 更新主体内容区域 */
+body {
+  background: linear-gradient(to bottom, var(--climate-snow-white) 0%, #e2e8f0 100%) !important;
+  color: var(--climate-ocean-blue) !important;
+}
+
+/* 更新图表容器 */
+.chart-container {
+  background: var(--climate-ice-white) !important;
+  border: 2px solid var(--climate-light-blue) !important;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1) !important;
+}
+
+.chart-container:hover {
+  border-color: var(--climate-sky-blue) !important;
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.15) !important;
+}
+
+/* 更新指标卡片 */
+.metric-card {
+  background: var(--climate-ice-white) !important;
+  border: 2px solid var(--climate-light-blue) !important;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.1) !important;
+}
+
+.metric-card:hover {
+  border-color: var(--climate-warning-orange) !important;
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.2) !important;
+}
+
+/* 温度相关元素 - 使用橙色和红色 */
+.temperature-warm,
+.warming-indicator {
+  background: var(--climate-warming-gradient) !important;
+  color: var(--climate-ice-white) !important;
+}
+
+.temperature-cool,
+.cooling-indicator {
+  background: var(--climate-cooling-gradient) !important;
+  color: var(--climate-ocean-blue) !important;
+}
+
+/* 环保相关元素 - 使用绿色 */
+.eco-indicator,
+.environmental-data {
+  background: var(--climate-nature-gradient) !important;
+  color: var(--climate-ice-white) !important;
+}
+
+/* 危机警示元素 - 使用红色 */
+.crisis-alert,
+.warning-indicator {
+  background: var(--climate-crisis-red) !important;
+  color: var(--climate-ice-white) !important;
+  border: 2px solid var(--climate-alert-red) !important;
+}
+
+/* 数据点颜色 */
+.data-point {
+  color: var(--climate-ocean-blue) !important;
+}
+
+.data-point.warming {
+  color: var(--climate-warning-orange) !important;
+}
+
+.data-point.critical {
+  color: var(--climate-crisis-red) !important;
+}
+
+.data-point.positive {
+  color: var(--climate-eco-green) !important;
+}
+
+/* 标题和文本 */
+.section-header {
+  color: var(--climate-ocean-blue) !important;
+  border-bottom: 3px solid var(--climate-sky-blue) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.data-label {
+  color: var(--climate-deep-blue) !important;
+}
+
+/* 按钮样式 */
+button, .btn {
+  background: var(--climate-sky-blue) !important;
+  color: var(--climate-ice-white) !important;
+  border: 2px solid var(--climate-deep-blue) !important;
+}
+
+button:hover, .btn:hover {
+  background: var(--climate-deep-blue) !important;
+  border-color: var(--climate-ocean-blue) !important;
+}
+
+button.warning, .btn.warning {
+  background: var(--climate-warning-orange) !important;
+  border-color: var(--climate-crisis-red) !important;
+}
+
+button.success, .btn.success {
+  background: var(--climate-eco-green) !important;
+  border-color: var(--climate-forest-green) !important;
+}
+
+button.danger, .btn.danger {
+  background: var(--climate-crisis-red) !important;
+  border-color: var(--climate-alert-red) !important;
+}
+
+/* 链接样式 */
+a {
+  color: var(--climate-sky-blue) !important;
+}
+
+a:hover {
+  color: var(--climate-deep-blue) !important;
+}
+
+/* 表格样式 */
+table {
+  background: var(--climate-ice-white) !important;
+  border: 2px solid var(--climate-light-blue) !important;
+}
+
+th {
+  background: var(--climate-ocean-gradient) !important;
+  color: var(--climate-ice-white) !important;
+}
+
+td {
+  border-bottom: 1px solid var(--climate-light-blue) !important;
+  color: var(--climate-ocean-blue) !important;
+}
+
+tr:hover {
+  background: rgba(96, 165, 250, 0.1) !important;
+}
+
+/* 输入框样式 */
+input, select, textarea {
+  border: 2px solid var(--climate-light-blue) !important;
+  background: var(--climate-ice-white) !important;
+  color: var(--climate-ocean-blue) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--climate-sky-blue) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* 特殊气候元素样式 */
+.climate-spiral {
+  stroke: var(--climate-sky-blue) !important;
+}
+
+.climate-spiral.warming {
+  stroke: var(--climate-warning-orange) !important;
+}
+
+.climate-spiral.critical {
+  stroke: var(--climate-crisis-red) !important;
+}
+
+/* 地理分布图样式 */
+.geography-map {
+  background: var(--climate-cooling-gradient) !important;
+}
+
+.geography-hot {
+  fill: var(--climate-crisis-red) !important;
+}
+
+.geography-warm {
+  fill: var(--climate-warning-orange) !important;
+}
+
+.geography-cool {
+  fill: var(--climate-sky-blue) !important;
+}
+
+.geography-cold {
+  fill: var(--climate-ocean-blue) !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .climate-header {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .header-title h1 {
+    font-size: 1.125rem !important;
+  }
+  
+  .nav-item {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* 动画效果 */
+@keyframes climate-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.climate-alert {
+  animation: climate-pulse 2s infinite !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--climate-snow-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--climate-sky-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--climate-deep-blue);
+}
